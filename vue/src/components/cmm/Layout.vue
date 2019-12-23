@@ -4,7 +4,7 @@
 		<slot name="header" :title="header"></slot>
 	</header>
 	<aside id="sidebar">
-		<slot name="sidebar" :title="sidebar"></slot>
+		<slot name="sidebar"></slot>
 	</aside>
 	<section id="content">
           <router-view></router-view>
@@ -46,6 +46,7 @@ header {
 }
 #sidebar {
      width: 200px;
+     height: 450px;
      padding: 5px 15px;
      float: left;
 }

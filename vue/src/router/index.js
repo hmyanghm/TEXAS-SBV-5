@@ -7,6 +7,7 @@ import Remove from '@/components/board/Remove'
 import Search from '@/components/board/Search'
 import Update from '@/components/board/Update'
 import Write from '@/components/board/Write'
+import Mypage from '@/components/member/Mypage'
 
 Vue.use(Router)
 
@@ -19,6 +20,7 @@ export default new Router({
 		{path: '/remove', name: 'remove', component: Remove},
 		{path: '/search', name: 'search', component: Search},
 		{path: '/update', name: 'update', component: Update},
-		{path: '/write', name: 'write', component: Write}
+		{path: '/write', name: 'write', component: Write},
+		{path: '/mypage', name: 'mypage', component: Mypage}
 	]
 })

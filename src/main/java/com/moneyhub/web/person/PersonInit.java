@@ -18,7 +18,6 @@ public class PersonInit implements ApplicationRunner{
 		this.PersonRepository = PersonRepository;
 	}
 
-
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		long count = PersonRepository.count();
