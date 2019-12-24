@@ -3,11 +3,7 @@
 	<layout>
 		<template #header="header">
 			<h1>{{header.title}}</h1>
-			<ul id="button" class="menu"> <!-- class로 주는 이유는 아래에 ul.menu 부분에서 menu앞에 점으로 되어있으니까! -->
-				<button v-for="i of headers" :key="i.menu">
-					<router-link :to="i.link">{{i.menu}}</router-link>
-				</button>
-			</ul>
+			<component :is="!loginCheck ? 'pre-auth' : 'post-auth'"></component>
 		</template>
 		<template #sidebar="sidebar">
 			<ul class="menu"> <!-- class로 주는 이유는 아래에 ul.menu 부분에서 menu앞에 점으로 되어있으니까! -->
@@ -27,9 +23,12 @@
 </template>
 <script>
 import Layout from "@/components/cmm/Layout.vue"
+import PreAuth from "@/components/cmm/PreAuth.vue"
+import PostAuth from "@/components/cmm/PostAuth.vue"
+import {store} from "@/store"
 export default {
 	components: {
-		Layout
+		Layout, PreAuth, PostAuth
 	},
 	data(){
 		return{
@@ -39,11 +38,12 @@ export default {
 				{menu: "글 수정", link: "/update"},
 				{menu: "글 삭제", link: "/remove"},
 				{menu: "검색", link: "/search"}
-			],
-			headers: [
-				{menu: "로그인", link: "/login"},
-				{menu: "회원가입", link: "/join"}
 			]
+		}
+	},
+	computed:{
+		loginCheck: function(){
+			return store.state.authCheck
 		}
 	}
 }

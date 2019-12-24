@@ -21,16 +21,24 @@ import lombok.Data;
 public class Person {
 	@Id
 	@GeneratedValue
-	@Column(name="ID", nullable=false)
+	@Column(name="ID", nullable = false)
 	private Long id;
-	@Column(name="USERID", nullable=false)
+	@Column(name="USERID", nullable = false)
 	private String userid;
-	@Column(name="PASSWD", nullable=false)
+	@Column(name="PASSWD", nullable = false)
 	private String passwd;
-	@Column(name="NAME", nullable=false)
+	@Column(name="NAME", nullable = false)
 	private String name;
 	@Temporal(TemporalType.DATE)
-	@Column(name="BIRTHDAY", nullable=false)
+	@Column(name="BIRTHDAY", nullable = false)
 	private Date birthday;
+	@Column(name="GENDER", nullable = false)
+	private String gender;
+	@Column(name="HAK", nullable = false)
+	private int hak;
+	@Column(name="BAN", nullable = false)
+	private int ban;
+	@Column(name="SCORE", nullable = false)
+	private int score;
 
 }

@@ -6,10 +6,7 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({ //vue 안에 있는 store를 등록한 것
   state: {
-		loginedUid: '',
-		loginedPwd: '',
-		id: '',
-		name: '',
-		birthday: ''
+		person: {},
+		authCheck: false
   }
 })
